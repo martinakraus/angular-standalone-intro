@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookNewComponent } from './book-new/book-new.component';
 import { BookRoutingModule } from './book-routing.module';
@@ -29,13 +28,13 @@ import { BookCardComponent } from './book-card/book-card.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    NgOptimizedImage
   ],
   declarations: [
     BookComponent,
     BookListComponent,
     BookDetailComponent,
-    BookEditComponent,
     BookNewComponent,
     BookCardComponent
   ]
