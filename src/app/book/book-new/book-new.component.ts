@@ -1,13 +1,24 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { bookNa } from '../models';
 import { BookApiService } from "../book-api.service";
 import { take } from "rxjs";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { NgIf } from "@angular/common";
 
 @Component({
     selector: 'ws-book-new',
     styleUrls: [ './book-new.component.scss' ],
+    standalone: true,
+    imports: [
+        ReactiveFormsModule,
+        MatInputModule,
+        MatButtonModule,
+        RouterLink,
+        NgIf
+    ],
     templateUrl: './book-new.component.html'
 })
 export class BookNewComponent {

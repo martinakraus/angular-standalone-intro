@@ -1,42 +1,21 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { BookNewComponent } from './book-new/book-new.component';
 import { BookRoutingModule } from './book-routing.module';
 import { BookComponent } from './book.component';
-import { BookCardComponent } from './book-card/book-card.component';
+import { BookDetailComponent } from "./book-detail/book-detail.component";
+import { BookNewComponent } from "./book-new/book-new.component";
 
 @NgModule({
-  imports: [
-    BookRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    CommonModule,
-    ReactiveFormsModule,
-
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    NgOptimizedImage
-  ],
-  declarations: [
-    BookComponent,
-    BookListComponent,
-    BookDetailComponent,
-    BookNewComponent,
-    BookCardComponent
-  ]
+    imports: [
+        BookRoutingModule,
+        // standalone components needs to be imported
+        BookDetailComponent,
+        BookListComponent,
+        BookNewComponent
+    ],
+    declarations: [
+        BookComponent
+    ]
 })
-export class BookModule {}
+export class BookModule {
+}
