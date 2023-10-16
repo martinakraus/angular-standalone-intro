@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BookComponent } from './book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
@@ -25,10 +24,3 @@ export const routes: Routes = [
         ]
     }
 ];
-
-@NgModule({
-    imports: [ RouterModule.forChild(routes) ],
-    exports: [ RouterModule ]
-})
-export class BookRoutingModule {
-}
