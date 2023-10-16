@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Book } from './models';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class BookApiService {
   private endpoint = 'http://localhost:4730/books';
 
