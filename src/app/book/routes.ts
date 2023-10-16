@@ -3,6 +3,8 @@ import { BookComponent } from './book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookApiService } from "./book-api.service";
+import { provideHttpClient, withInterceptors, withRequestsMadeViaParent } from "@angular/common/http";
+import { ApiVersionInterceptor } from "./api-version.interceptor";
 
 export const routes: Routes = [
     {
@@ -16,7 +18,16 @@ export const routes: Routes = [
             },
             {
                 path: 'new',
-                loadComponent: () => import('./book-new/book-new.component').then(m => m.BookNewComponent)
+                loadComponent: () => import('./book-new/book-new.component').then(m => m.BookNewComponent),
+                providers: [
+                    BookApiService,
+                    provideHttpClient(
+                        withRequestsMadeViaParent(),
+                        withInterceptors(
+                            [ ApiVersionInterceptor ]
+                        )
+                    )
+                ]
             },
             {
                 path: ':isbn',
