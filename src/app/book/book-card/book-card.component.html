@@ -6,9 +6,7 @@
   </mat-card-header>
   <img
     class="book-cover-thumb"
-    [ngSrc]="content.cover || 'https://via.placeholder.com/468x800?text=No%20cover%20available'"
-    width="150"
-    height="150"
+    [src]="content.cover || 'https://via.placeholder.com/468x800?text=No%20cover%20available'"
     [attr.alt]="content.title"
   />
   <mat-card-content>

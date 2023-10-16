@@ -6,11 +6,9 @@
     </mat-card-header>
     <img
             mat-card-image
-            [ngSrc]="book.cover || 'https://via.placeholder.com/468x800?text=No%20cover%20available'"
+            [src]="book.cover || 'https://via.placeholder.com/468x800?text=No%20cover%20available'"
             class="book-cover"
-            alt="book cover"
-            height="220"
-            width="600"/>
+            alt="book cover"/>
     <mat-card-content>
         <p>
             {{ book.subtitle }}
